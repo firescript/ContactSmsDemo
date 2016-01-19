@@ -1,0 +1,13 @@
+{
+  "nativescript": {
+    "id": "org.nativescript.myApp",
+    "tns-ios": {
+      "version": "1.5.2"
+    }
+  },
+  "dependencies": {
+    "nativescript-contacts": "^1.0.4",
+    "nativescript-messenger": "^1.0.14",
+    "tns-core-modules": "1.5.1"
+  }
+}

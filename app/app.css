@@ -1,0 +1,18 @@
+﻿StackLayout{
+    text-align:center;
+}
+
+Label{
+    font-size:16;
+    color: #555;
+}
+
+.btn {
+    margin:20 0;
+    font-size: 15;
+    background-color: #ff7070;
+    color: #fff;
+    padding: 10 15;
+    border-radius: 5;
+    horizontal-align: center;
+}
