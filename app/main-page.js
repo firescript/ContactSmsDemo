@@ -9,24 +9,19 @@ exports.pageLoaded = function(args) {
 }
 
 exports.getContact = function(args){
-    contacts.one().then(function(args){        
-        if(app.ios){
-            // contacts.one() returns a CNContact containg several properties you
-            // can use see apple docs for full list of properties
-            var contact = args.ios;        
+    contacts.getContact().then(function(args){        
+        
+            // contacts.getContact() returns an object containing the contacts data
+            var contact = args.data;        
             // lets assign the first and last name to the contact_name property
-            model.contact_name = contact.givenName + " " + contact.familyName;    
+            model.contact_name = contact.name.given + " " + contact.name.family;    
             // lets check to make sure we have a phone number before assigning it to the 
             // property in our model        
-            if(contact.phoneNumbers.count > 0){
-                // the phone is an NSArray meaning it could hold multiple values
+            if(contact.phoneNumbers.length > 0){
                 // we just want the first phone number in this case
-                model.phone = contact.phoneNumbers[0].value.stringValue
+                model.phone = contact.phoneNumbers[0]
             }
-        } else {
-            // android doesnt quite work yet, should soon though!
-            alert("This function isn't supported in Android as of yet");
-        }
+            
     });
 }
 
